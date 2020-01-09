@@ -74,7 +74,20 @@ Optional - Install additional OCR support dependencies
 - Debian/Ubuntu: `apt-get install tesseract-ocr python3-imaging`
 
 - MAC OSX: `brew install tesseract`
-- Windows: check https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i
+- Windows: 
+I see steps are scattered in different answers. Based on my recent experience with this pytesseract error on Windows, writing different steps in sequence to make it easier to resolve the error:
+
+1. Install tesseract using windows installer available at: https://github.com/UB-Mannheim/tesseract/wiki
+
+2. Note the tesseract path from the installation.Default installation path at the time the time of this edit was: C:\Users\USER\AppData\Local\Tesseract-OCR. It may change so please check the installation path.
+
+3. pip install pytesseract
+
+4. set the tesseract path in the script before calling image_to_string:
+
+pytesseract.pytesseract.tesseract_cmd = r'C:\\Users\\USER\\AppData\\Local\Tesseract-OCR\\tesseract.exe' ^ this path can be 
+ different depent on install directory of  https://github.com/UB-Mannheim/tesseract/wiki
+check https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i
 
 
 ## Usage
