@@ -121,7 +121,14 @@ check https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound
     -w MAXWIDTH, --maxwidth MAXWIDTH
                             Width of text table
     -V, --version         show program's version number and exit
-
+  
+    -P,  --proxy ,        required=False, default=None, help="proxy. ex https://127.0.0.1:8080")
+    -u,  --username,      required=False, default=None, type=str, help="username for expireddomains.net")
+	-p,  --password,      required=False, default=None, type=str, help="password for expireddomains.net")
+    -o,  --output,        required=False, default=None, type=str, help="output file path")
+    -ks, --keyword-start, help='Keyword starts with used to refine search results', required=False, default="", type=str, dest='keyword_start')
+    -ke, --keyword-end, help='Keyword ends with used to refine search results', required=False, default="", type=str, dest='keyword_end')
+	
     Examples:
     ./domainhunter.py -k apples -c --ocr -t5
     ./domainhunter.py --check --ocr -t3
